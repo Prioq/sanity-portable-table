@@ -1,16 +1,16 @@
-import React, {useCallback} from 'react'
-import {
-  RenderInputCallback,
-  MemberField,
-  FieldMember,
-  ObjectInputProps,
-  BlockDefinition,
-} from 'sanity'
-import {PortableTextBlock, set} from 'sanity'
-import {Button, Inline, Stack, Card, Text} from '@sanity/ui'
-import {randomKey} from '@sanity/util/content'
-
 import {AddIcon, RemoveIcon} from '@sanity/icons'
+import {Button, Card, Inline, Stack, Text} from '@sanity/ui'
+import {randomKey} from '@sanity/util/content'
+import {useCallback} from 'react'
+import {
+  BlockDefinition,
+  FieldMember,
+  MemberField,
+  ObjectInputProps,
+  PortableTextBlock,
+  RenderInputCallback,
+  set,
+} from 'sanity'
 
 import type {Cell, Row, Table, TableConfig} from '../types'
 
@@ -134,6 +134,7 @@ export function TableInput(props: ObjectInputProps & TableConfig) {
           renderPreview={props.renderPreview}
           renderBlock={props.renderBlock}
           renderAnnotation={props.renderAnnotation}
+          renderInlineBlock={props.renderInlineBlock}
         />
       )}
     </Stack>
